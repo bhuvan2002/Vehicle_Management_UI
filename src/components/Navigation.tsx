@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-  Box,
-  IconButton,
-  Menu,
-  MenuItem,
-} from '@mui/material';
+import {AppBar,Toolbar,Typography,Button,Box,IconButton,Menu,MenuItem,} from '@mui/material';
 import { AccountCircle, DirectionsCar } from '@mui/icons-material';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -52,9 +43,11 @@ const Navigation: React.FC = () => {
                 </Button>
               </>
             )}
-            <Button color="inherit" href="/my-vehicles">
-              My Vehicles
-            </Button>
+            {!isAdmin() && (
+              <Button color="inherit" href="/my-vehicles">
+                My Vehicles
+              </Button>
+            )}
             <IconButton
               size="large"
               aria-label="account of current user"

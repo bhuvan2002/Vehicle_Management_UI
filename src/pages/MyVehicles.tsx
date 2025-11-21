@@ -1,14 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-  Container,
-  Card,
-  CardContent,
-  Typography,
-  Box,
-  Chip,
-  CircularProgress,
-  Alert,
-} from '@mui/material';
+import {Container,Card,CardContent,Typography,Box,Chip,CircularProgress,Alert,} from '@mui/material';
 import { BatteryChargingFull, LocalShipping } from '@mui/icons-material';
 import { vehicleService } from '../services/api';
 import type { Vehicle } from '../types';
@@ -30,16 +21,6 @@ const MyVehicles: React.FC = () => {
       setError('Failed to fetch your vehicles');
     } finally {
       setLoading(false);
-    }
-  };
-
-  const getChargingColor = (status: string) => {
-    switch (status) {
-      case 'FullyCharged': return 'success';
-      case 'Charging': return 'warning';
-      case 'NotCharging': return 'default';
-      case 'Faulty': return 'error';
-      default: return 'default';
     }
   };
 
@@ -109,13 +90,7 @@ const MyVehicles: React.FC = () => {
                   <Typography variant="body2" color="text.secondary" gutterBottom>
                     Max Payload: {vehicle.maxPayloadKg} kg
                   </Typography>
-                  
-                  <Chip 
-                    label={vehicle.chargingStatus} 
-                    color={getChargingColor(vehicle.chargingStatus) as any}
-                    size="small"
-                    sx={{ mt: 1 }}
-                  />
+                
                 </CardContent>
               </Card>
             </Box>

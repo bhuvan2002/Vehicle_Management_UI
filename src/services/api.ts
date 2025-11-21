@@ -97,7 +97,6 @@ export const userService = {
       model: string;
       currentChargePercentage: number;
       maxPayloadKg: number;
-      chargingStatus: number; // Changed to number
     }): Promise<Vehicle> => {
       const response = await api.post<Vehicle>('/vehicles', vehicleData);
       return response.data;
@@ -108,7 +107,6 @@ export const userService = {
       model: string;
       currentChargePercentage: number;
       maxPayloadKg: number;
-      chargingStatus: number; // Changed to number
     }): Promise<void> => {
       await api.put(`/vehicles/${id}`, vehicleData);
     },
@@ -116,10 +114,10 @@ export const userService = {
       await api.delete(`/vehicles/${id}`);
     },
     assignVehicle: async (vehicleId: number, userId: number): Promise<void> => {
-      await api.post(`/vehicles/${vehicleId}/assign`, { userId });
+      await api.post(`users/${userId}/vehicles/${vehicleId}/assign`, { userId });
     },
-    unassignVehicle: async (vehicleId: number): Promise<void> => {
-      await api.post(`/vehicles/${vehicleId}/unassign`);
+    unassignVehicle: async (vehicleId: number, userId: number): Promise<void> => {
+      await api.post(`users/${userId}/vehicles/${vehicleId}/unassign`);
     },
     getMyVehicles: async (): Promise<Vehicle[]> => {
       const response = await api.get<Vehicle[]>('/my/vehicles');
