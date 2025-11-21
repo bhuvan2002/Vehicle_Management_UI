@@ -84,14 +84,6 @@ const Login: React.FC = () => {
             >
               {loading ? <CircularProgress size={24} /> : 'Sign In'}
             </Button>
-            <Box sx={{ mt: 2 }}>
-              <Typography variant="body2" color="text.secondary" align="center">
-                Demo Admin Credentials:
-              </Typography>
-              <Typography variant="body2" color="text.secondary" align="center">
-                Email: admin@vehicle.com | Password: admin123
-              </Typography>
-            </Box>
           </Box>
         </Paper>
       </Box>
