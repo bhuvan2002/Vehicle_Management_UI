@@ -1,77 +1,65 @@
-<<<<<<< HEAD
-# Vehicle_Management_UI
-=======
-# React + TypeScript + Vite
+Vehicle_Management_UI
+React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a Role-Based Vehicle Management Dashboard built using Vite, React, TypeScript, and Material UI.
+It provides two dashboards — Admin and User — along with pages to manage Users and Vehicles.
 
-Currently, two official plugins are available:
+The UI consumes a backend RBAC API where Admins can manage users/vehicles and assign vehicles, while Users can view their own profile and assigned vehicles.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🚀 Features
+🔐 Authentication & Authorization
 
-## React Compiler
+JWT-based login
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Role-based dashboard for Admin and User
 
-## Expanding the ESLint configuration
+Protected Routes using React Router
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🧑‍💼 Admin Dashboard
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Manage Users (Create, Edit, Delete)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Manage Vehicles (Create, Edit, Delete)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Assign/Unassign vehicles
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+View all data in a structured dashboard
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+👤 User Dashboard
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
->>>>>>> 183b884 (Initial Push)
+View personal profile
+
+View assigned vehicles
+
+🧱 Built With
+
+Vite — lightning-fast dev environment
+
+React 18
+
+TypeScript
+
+Material UI (MUI) for modern UI
+
+React Router
+
+Axios for API communication
+
+📦 Installation & Setup
+1️⃣ Clone the Repo
+git clone https://github.com/yourusername/vehicle_management_ui.git
+cd vehicle_management_ui
+
+2️⃣ Install Dependencies
+npm install
+
+3️⃣ Start Dev Server (HMR Included)
+npm run dev
+
+4️⃣ Build for Production
+npm run build
+
+
+🔗 Live Demo
+
+https://vehicle-management-ui.vercel.app/login
